@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Share Tech Mono", "ui-monospace", "monospace";
+  --font-pixel: "VT323", "monospace";
+  
+  --color-retro-green: #00ff41;
+  --color-retro-amber: #ffb000;
+  --color-retro-cyan: #00f3ff;
+}
+
+@layer base {
+  body {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  .retro-glow-green {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
+  }
+  .retro-glow-amber {
+    text-shadow: 0 0 10px rgba(255, 176, 0, 0.7);
+  }
+  .retro-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+  }
+  
+  .crt-flicker {
+    animation: crt-flicker 0.15s infinite;
+  }
+
+  @keyframes crt-flicker {
+    0% { opacity: 0.99; }
+    50% { opacity: 0.97; }
+    100% { opacity: 0.99; }
+  }
+}
